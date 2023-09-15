@@ -1,0 +1,40 @@
+import openai
+
+# Set your OpenAI API key
+api_key = "YOUR_API_KEY_HERE"
+
+# Initialize the OpenAI API client
+openai.api_key = api_key
+
+def generate_microcontroller_code(command):
+    # Define the prompt for code generation
+    prompt = f"Generate code for the microcontroller to '{command}'"
+
+    # Use OpenAI to generate code
+    response = openai.Completion.create(
+        engine="text-davinci-002",  # You can use a different engine if needed
+        prompt=prompt,
+        max_tokens=100,  # Adjust as needed
+        n = 1
+    )
+
+    # Extract the generated code from the response
+    generated_code = response.choices[0].text.strip()
+
+    return generated_code
+
+def main():
+    print("I am Bowser Koopa! King Koopa to you!")
+    print("Are we ready to destroy today?")
+    greeting = input()
+    command = input("What shall we destroy today?\n")
+
+    # Generate code for the microcontroller using OpenAI
+    microcontroller_code = generate_microcontroller_code(command)
+
+    # Print the generated code
+    print("Generated Code:")
+    print(microcontroller_code)
+
+if __name__ == "__main__":
+    main()
