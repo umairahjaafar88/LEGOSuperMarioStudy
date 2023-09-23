@@ -24,10 +24,15 @@ def generate_microcontroller_code(command):
     return generated_code
 
 def main():
+    greeting=" "
     print("I am Bowser Koopa! King Koopa to you!")
-    print("Are we ready to destroy today?")
-    greeting = input()
-    command = input("What shall we destroy today?\n")
+    while greeting!= "yes" and greeting != "no" :
+        print("Are we ready to destroy today?")
+        greeting = input()
+    if greeting == "no" :
+        print("Understandable, have a nice day.")
+    else:
+        command=input("What shall we destroy today?\n")
 
     # Generate code for the microcontroller using OpenAI
     microcontroller_code = generate_microcontroller_code(command)
