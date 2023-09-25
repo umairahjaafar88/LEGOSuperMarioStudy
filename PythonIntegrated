@@ -1,17 +1,17 @@
 import openai
 
-# Set your OpenAI API key
+# Setting OpenAI API key
 api_key = "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"
 
-# Initialize the OpenAI API client
+# Initializing the OpenAI API client
 openai.api_key = api_key
 
-#Microcontroller Code Function Generation
+#Function Definition for Code Generation
 def generate_microcontroller_code(command):
     # Define the prompt for code generation
     prompt = f"Generate code for the microcontroller to '{command}'"
 
-    # Use OpenAI to generate code
+    # Using OpenAI to generate code
     response = openai.Completion.create(
         engine="text-davinci-002",  # You can use a different engine if needed
         prompt=prompt,
@@ -19,7 +19,7 @@ def generate_microcontroller_code(command):
         n = 1
     )
 
-    # Extract the generated code from the response
+    # Extracting the generated code from the response
     generated_code = response.choices[0].text.strip()
 
     return generated_code
@@ -36,10 +36,10 @@ def main():
     else:
         command=input("What shall we destroy today?\n")
 
-    # Generate code for the microcontroller using OpenAI
+    # Calling code generation function
     microcontroller_code = generate_microcontroller_code(command)
 
-    # Print the generated code / Modify function so code will be sent directly to microcontroller
+    # Printing the generated code
     print("Generated Code:")
     print(microcontroller_code)
 
