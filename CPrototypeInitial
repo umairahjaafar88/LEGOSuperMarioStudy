@@ -2,9 +2,11 @@
 
 //Global Variables
 char command[500],greeting[50];
+
+//Function Prototype
 void destroywhat(void);
 
-
+//Main Function
 int main(void) {
     printf("I am Bowser Koopa! King Koopa to you!\n Are we ready to destroy today?\n");
     scanf("%s",greeting);
@@ -12,6 +14,7 @@ int main(void) {
 
 }
 
+//Function Definition
 void destroywhat(void){
     printf("What shall we destroy today?\n");
     scanf("%s",command);
