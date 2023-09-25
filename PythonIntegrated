@@ -6,6 +6,7 @@ api_key = "YOUR_API_KEY_HERE"
 # Initialize the OpenAI API client
 openai.api_key = api_key
 
+#Microcontroller Code Function Generation
 def generate_microcontroller_code(command):
     # Define the prompt for code generation
     prompt = f"Generate code for the microcontroller to '{command}'"
@@ -23,6 +24,7 @@ def generate_microcontroller_code(command):
 
     return generated_code
 
+#Main Function
 def main():
     greeting=" "
     print("I am Bowser Koopa! King Koopa to you!")
@@ -37,7 +39,7 @@ def main():
     # Generate code for the microcontroller using OpenAI
     microcontroller_code = generate_microcontroller_code(command)
 
-    # Print the generated code
+    # Print the generated code / Modify function so code will be sent directly to microcontroller
     print("Generated Code:")
     print(microcontroller_code)
 
